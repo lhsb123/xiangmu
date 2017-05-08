@@ -1,0 +1,33 @@
+<audio 
+poster="{{music.poster}}"
+ name="{{music.name}}" 
+ author="{{music.author}}" 
+ src="{{music.src}}" 
+ id="myAudio"
+  controls 
+  bindended="endedHandle"
+  bindtimeupdate="pro"
+  
+  ></audio>
+<button class="button-style" type="primary" bindtap="audioPlay">播放</button>
+<button class="button-style" type="primary" bindtap="audioPause">暂停</button>
+<button class="button-style" type="primary" bindtap="audio14">设置当前播放时间为14秒</button>
+<button class="button-style" type="primary" bindtap="audioStart">重放</button>
+
+ <view>{{musicText}}</view>
+<progress percent="{{percent}}" show-info />
+
+
+<scroll-view class="box" scroll-y="true" style="height: {{scrollHeight}}px">
+    <view wx:for="{{musicList}}"
+     wx:for-item="music" 
+     wx:for-index="idx"    
+     wx:key="{{idx}}"
+     class="music">
+        <view class="musicPoster">
+            <image src="{{music.poster}}" data-idx="{{idx}}" bindtap="playMusic" style="width:50px;height:50px;"></image>
+        </view>
+        <view class="musicName" style="font-size:12px;margin-left:55px;margin-top:-45px;">{{music.name}}</view>
+        <view class="musicAuthor" style="font-size:12px;margin-left:55px;margin-top:-15px;">{{music.author}}</view>
+     </view>
+</scroll-view> 

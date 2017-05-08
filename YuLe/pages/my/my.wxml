@@ -1,0 +1,7 @@
+<!--pages/my/my.wxml-->
+<view class="container">
+	<view class="userInfo">
+		<image src="{{userAvatar}}" class="userAvatar"></image>
+		<text class="userName">{{userName}}</text>
+	</view>
+</view>
